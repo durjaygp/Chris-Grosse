@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights - Chris Grosse | Healthcare Strategy Expert</title>
+    <meta name="description" content="Articles on healthcare strategy, market dynamics, go-to-market execution, and clinical education.">
+    <meta name="theme-color" content="#0369a1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+
+        header {
+            transition: all 0.5s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0369a1 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(3, 105, 161, 0.15);
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #0369a1 0%, #06b6d4 100%);
+            color: white;
+            border-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 w-full z-50 bg-white/50 backdrop-blur-md border-b border-transparent">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold gradient-text">Chris Grosse</a>
+            
+            <div class="hidden md:flex items-center gap-2">
+                <a href="index.html#home" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Home</a>
+                <a href="index.html#about" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">About</a>
+                <a href="index.html#expertise" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Expertise</a>
+                <a href="index.html#work" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Work</a>
+                <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-sky-600 bg-sky-50 transition-all">Blog</a>
+                <a href="index.html#contact" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Contact</a>
+                <a href="#" class="ml-2 px-5 py-2 bg-gradient-to-r from-sky-600 to-cyan-600 text-white rounded-lg text-sm font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all">Resume</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2">
+                <span class="w-6 h-0.5 bg-slate-700 rounded transition-all"></span>
+                <span class="w-6 h-0.5 bg-slate-700 rounded transition-all"></span>
+                <span class="w-6 h-0.5 bg-slate-700 rounded transition-all"></span>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-slate-200">
+            <div class="flex flex-col gap-2 p-4">
+                <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Home</a>
+                <a href="index.html#about" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">About</a>
+                <a href="index.html#expertise" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Expertise</a>
+                <a href="index.html#work" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Work</a>
+                <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-sky-600 bg-sky-50">Blog</a>
+                <a href="index.html#contact" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-4 md:px-8 relative overflow-hidden">
+        <div class="absolute top-20 right-0 w-96 h-96 bg-sky-200/30 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="inline-block mb-4 px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold animate-fade-in-up">
+                Blog & Insights
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-slate-900 animate-fade-in-up delay-100">
+                Strategic <span class="gradient-text">Insights</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+                Explore articles on healthcare strategy, market dynamics, go-to-market execution, and clinical education best practices.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-6 px-4 md:px-8 border-y border-slate-200 bg-slate-50/50 sticky top-[72px] z-40 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap items-center gap-3">
+                <span class="text-sm font-semibold text-slate-700 mr-2">Filter by:</span>
+                <button class="filter-btn active px-4 py-2 rounded-lg text-sm font-medium border border-slate-200 bg-white" data-category="all">All Articles</button>
+                <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium border border-slate-200 bg-white text-slate-600 hover:border-sky-300" data-category="Strategy">Strategy</button>
+                <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium border border-slate-200 bg-white text-slate-600 hover:border-sky-300" data-category="Market Analysis">Market Analysis</button>
+                <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium border border-slate-200 bg-white text-slate-600 hover:border-sky-300" data-category="Compliance">Compliance</button>
+                <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium border border-slate-200 bg-white text-slate-600 hover:border-sky-300" data-category="Sales">Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="py-16 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <a href="blog/glp1-market-expansion.html" class="group block card-hover animate-fade-in-up" data-category="Market Analysis">
+                <div class="grid md:grid-cols-2 gap-8 bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <div class="relative h-64 md:h-full min-h-[300px] overflow-hidden bg-gradient-to-br from-sky-600 to-cyan-600">
+                        <img src="/placeholder.svg?height=400&width=600" 
+                             alt="GLP-1 Market Expansion" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-sky-700 text-xs font-semibold rounded-full">Featured</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col justify-center">
+                        <span class="inline-block w-fit px-3 py-1 bg-sky-100 text-sky-700 text-xs font-semibold rounded-full mb-4">Market Analysis</span>
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 group-hover:text-sky-600 transition-colors">
+                            The GLP-1 Market Expansion: Opportunities and Challenges
+                        </h2>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            An in-depth analysis of how the GLP-1 market is expanding and what it means for healthcare providers, pharmacies, and patients. Explore key trends, adoption strategies, and market dynamics.
+                        </p>
+                        <div class="flex items-center justify-between pt-6 border-t border-slate-200">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-gradient-to-br from-sky-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-sm">CG</div>
+                                <div>
+                                    <p class="text-sm font-medium text-slate-900">Chris Grosse</p>
+                                    <p class="text-xs text-slate-500">Jan 15, 2024</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-slate-500">8 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="py-8 pb-20 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div id="blog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Article 1 -->
+                <a href="blog/building-clinical-education.html" class="group block card-hover animate-fade-in-up delay-100" data-category="Strategy">
+                    <article class="bg-white rounded-xl border border-slate-200 overflow-hidden h-full flex flex-col">
+                        <div class="relative h-48 overflow-hidden bg-gradient-to-br from-sky-600 to-cyan-600">
+                            <img src="/placeholder.svg?height=200&width=400" 
+                                 alt="Clinical Education Programs" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="inline-block w-fit px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-semibold rounded-full mb-3">Strategy</span>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">
+                                Building Effective Clinical Education Programs
+                            </h3>
+                            <p class="text-sm text-slate-600 mb-4 flex-grow">
+                                A framework for creating provider education initiatives that drive adoption and improve clinical outcomes.
+                            </p>
+                            <div class="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+                                <span class="text-xs text-slate-500">Jan 10, 2024</span>
+                                <span class="text-xs text-slate-500">6 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Article 2 -->
+                <a href="blog/compliance-best-practices.html" class="group block card-hover animate-fade-in-up delay-200" data-category="Compliance">
+                    <article class="bg-white rounded-xl border border-slate-200 overflow-hidden h-full flex flex-col">
+                        <div class="relative h-48 overflow-hidden bg-gradient-to-br from-cyan-600 to-sky-600">
+                            <img src="/placeholder.svg?height=200&width=400" 
+                                 alt="Compliance Best Practices" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="inline-block w-fit px-3 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded-full mb-3">Compliance</span>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">
+                                Compounding Pharmacy Compliance Best Practices
+                            </h3>
+                            <p class="text-sm text-slate-600 mb-4 flex-grow">
+                                Essential compliance strategies for specialty pharmacy operations in an evolving regulatory landscape.
+                            </p>
+                            <div class="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+                                <span class="text-xs text-slate-500">Jan 5, 2024</span>
+                                <span class="text-xs text-slate-500">10 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Article 3 -->
+                <a href="blog/go-to-market-strategies.html" class="group block card-hover animate-fade-in-up delay-300" data-category="Strategy">
+                    <article class="bg-white rounded-xl border border-slate-200 overflow-hidden h-full flex flex-col">
+                        <div class="relative h-48 overflow-hidden bg-gradient-to-br from-sky-600 to-cyan-600">
+                            <img src="/placeholder.svg?height=200&width=400" 
+                                 alt="Go-to-Market Strategies" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="inline-block w-fit px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-semibold rounded-full mb-3">Strategy</span>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">
+                                Go-to-Market Strategies for Healthcare Innovations
+                            </h3>
+                            <p class="text-sm text-slate-600 mb-4 flex-grow">
+                                A comprehensive guide to developing successful go-to-market strategies in the healthcare industry.
+                            </p>
+                            <div class="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+                                <span class="text-xs text-slate-500">Dec 28, 2023</span>
+                                <span class="text-xs text-slate-500">12 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Article 4 -->
+                <a href="blog/sales-team-structure.html" class="group block card-hover animate-fade-in-up delay-100" data-category="Sales">
+                    <article class="bg-white rounded-xl border border-slate-200 overflow-hidden h-full flex flex-col">
+                        <div class="relative h-48 overflow-hidden bg-gradient-to-br from-cyan-600 to-sky-600">
+                            <img src="/placeholder.svg?height=200&width=400" 
+                                 alt="Sales Team Structure" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="inline-block w-fit px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full mb-3">Sales</span>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">
+                                Building High-Performance Sales Teams in Healthcare
+                            </h3>
+                            <p class="text-sm text-slate-600 mb-4 flex-grow">
+                                Best practices for structuring, training, and managing healthcare sales organizations.
+                            </p>
+                            <div class="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+                                <span class="text-xs text-slate-500">Dec 20, 2023</span>
+                                <span class="text-xs text-slate-500">9 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Article 5 -->
+                <a href="blog/provider-adoption-pathways.html" class="group block card-hover animate-fade-in-up delay-200" data-category="Market Analysis">
+                    <article class="bg-white rounded-xl border border-slate-200 overflow-hidden h-full flex flex-col">
+                        <div class="relative h-48 overflow-hidden bg-gradient-to-br from-sky-600 to-cyan-600">
+                            <img src="/placeholder.svg?height=200&width=400" 
+                                 alt="Provider Adoption Pathways" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="inline-block w-fit px-3 py-1 bg-sky-100 text-sky-700 text-xs font-semibold rounded-full mb-3">Market Analysis</span>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">
+                                Understanding Provider Adoption Pathways
+                            </h3>
+                            <p class="text-sm text-slate-600 mb-4 flex-grow">
+                                Exploring how healthcare providers evaluate and adopt new therapies and technologies.
+                            </p>
+                            <div class="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+                                <span class="text-xs text-slate-500">Dec 15, 2023</span>
+                                <span class="text-xs text-slate-500">7 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Article 6 -->
+                <a href="#" class="group block card-hover animate-fade-in-up delay-300" data-category="Strategy">
+                    <article class="bg-white rounded-xl border border-slate-200 overflow-hidden h-full flex flex-col">
+                        <div class="relative h-48 overflow-hidden bg-gradient-to-br from-cyan-600 to-sky-600">
+                            <img src="/placeholder.svg?height=200&width=400" 
+                                 alt="Digital Transformation" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="inline-block w-fit px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-semibold rounded-full mb-3">Strategy</span>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">
+                                Digital Transformation in Healthcare Sales
+                            </h3>
+                            <p class="text-sm text-slate-600 mb-4 flex-grow">
+                                How digital tools are reshaping the healthcare sales landscape and provider engagement.
+                            </p>
+                            <div class="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+                                <span class="text-xs text-slate-500">Dec 10, 2023</span>
+                                <span class="text-xs text-slate-500">8 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-results" class="hidden text-center py-16">
+                <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-slate-900 mb-2">No articles found</h3>
+                <p class="text-slate-600">Try selecting a different category or check back later for new content.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="py-20 px-4 md:px-8 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block mb-4 px-4 py-2 bg-sky-600/20 text-sky-400 rounded-full text-sm font-semibold">
+                Stay Updated
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Subscribe to My Newsletter
+            </h2>
+            <p class="text-lg text-slate-400 mb-8 max-w-xl mx-auto">
+                Get the latest insights on healthcare strategy, market trends, and go-to-market best practices delivered to your inbox.
+            </p>
+            <a href="https://chris-newsletter-27fa7e.beehiiv.com/" target="_blank" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-semibold rounded-lg hover:shadow-lg hover:-translate-y-1 transition-all">
+                Subscribe Now
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-4 md:px-8 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="text-2xl font-bold gradient-text">Chris Grosse</a>
+                    <p class="text-slate-400 mt-4 max-w-sm leading-relaxed">
+                        Healthcare strategy leader specializing in go-to-market execution, provider adoption, and clinical education.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigation</h4>
+                    <div class="flex flex-col gap-3">
+                        <a href="index.html" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Home</a>
+                        <a href="index.html#about" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">About</a>
+                        <a href="index.html#work" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Work</a>
+                        <a href="blog.html" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Blog</a>
+                        <a href="index.html#contact" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <div class="flex flex-col gap-3">
+                        <a href="mailto:cgrosse66@gmail.com" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Email</a>
+                        <a href="https://www.linkedin.com/in/sales-operations-development" target="_blank" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">LinkedIn</a>
+                        <a href="https://chris-newsletter-27fa7e.beehiiv.com/" target="_blank" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Newsletter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8">
+                <p class="text-slate-500 text-sm">© 2026 Chris Grosse. All rights reserved.</p>
+                <p class="text-slate-500 text-sm">Designed & built with modern principles</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        });
+
+        // Blog filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const articles = document.querySelectorAll('#blog-grid > a, section > div > a[data-category]');
+        const noResults = document.getElementById('no-results');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+                
+                // Update active state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter articles
+                let visibleCount = 0;
+                articles.forEach(article => {
+                    const articleCategory = article.dataset.category;
+                    if (category === 'all' || articleCategory === category) {
+                        article.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide no results message
+                noResults.classList.toggle('hidden', visibleCount > 0);
+            });
+        });
+    </script>
+</body>
+</html>

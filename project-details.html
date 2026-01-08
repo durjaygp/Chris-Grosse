@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLP-1 Market Expansion - Chris Grosse | Case Study</title>
+    <meta name="description" content="Case study on leading comprehensive market analysis and go-to-market strategy for GLP-1 therapeutics.">
+    <meta name="theme-color" content="#0369a1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+
+        header {
+            transition: all 0.5s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0369a1 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(3, 105, 161, 0.15);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(135deg, #0369a1, #06b6d4);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(3, 105, 161, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 w-full z-50 bg-white/50 backdrop-blur-md border-b border-transparent">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold gradient-text">Chris Grosse</a>
+            
+            <div class="hidden md:flex items-center gap-2">
+                <a href="index.html#home" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Home</a>
+                <a href="index.html#about" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">About</a>
+                <a href="index.html#expertise" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Expertise</a>
+                <a href="index.html#work" class="px-4 py-2 rounded-lg text-sm font-medium text-sky-600 bg-sky-50 transition-all">Work</a>
+                <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Blog</a>
+                <a href="index.html#contact" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Contact</a>
+                <a href="#" class="ml-2 px-5 py-2 bg-gradient-to-r from-sky-600 to-cyan-600 text-white rounded-lg text-sm font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all">Resume</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2">
+                <span class="w-6 h-0.5 bg-slate-700 rounded transition-all"></span>
+                <span class="w-6 h-0.5 bg-slate-700 rounded transition-all"></span>
+                <span class="w-6 h-0.5 bg-slate-700 rounded transition-all"></span>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-slate-200">
+            <div class="flex flex-col gap-2 p-4">
+                <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Home</a>
+                <a href="index.html#about" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">About</a>
+                <a href="index.html#expertise" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Expertise</a>
+                <a href="index.html#work" class="px-4 py-2 rounded-lg text-sm font-medium text-sky-600 bg-sky-50">Work</a>
+                <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Blog</a>
+                <a href="index.html#contact" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-8 md:pt-40 md:pb-12 px-4 md:px-8 relative overflow-hidden">
+        <div class="absolute top-20 right-0 w-96 h-96 bg-sky-200/30 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-5xl mx-auto">
+            <!-- Back Button -->
+            <a href="index.html#work" class="inline-flex items-center text-sky-600 hover:text-sky-700 font-medium mb-8 group animate-fade-in">
+                <svg class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Projects
+            </a>
+
+            <!-- Project Header -->
+            <div class="animate-fade-in-up">
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <span class="px-4 py-1.5 bg-sky-100 text-sky-700 text-sm font-semibold rounded-full">Market Analysis</span>
+                    <span class="px-4 py-1.5 bg-cyan-100 text-cyan-700 text-sm font-semibold rounded-full">Go-to-Market</span>
+                    <span class="px-4 py-1.5 bg-slate-100 text-slate-700 text-sm font-semibold rounded-full">Healthcare</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-slate-900">
+                    GLP-1 Market <span class="gradient-text">Expansion</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed">
+                    Led comprehensive market analysis and go-to-market strategy for GLP-1 therapeutics, resulting in 40% provider adoption increase across multi-state territory.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Image -->
+    <section class="py-8 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto animate-fade-in-up delay-100">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img src="/placeholder.svg?height=600&width=1200" 
+                     alt="GLP-1 Market Expansion Project" 
+                     class="w-full h-64 md:h-96 lg:h-[500px] object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 px-4 md:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="stat-card bg-white rounded-xl p-6 border border-slate-200 text-center animate-fade-in-up delay-100">
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">40%</div>
+                    <div class="text-sm text-slate-600 font-medium">Adoption Growth</div>
+                </div>
+                <div class="stat-card bg-white rounded-xl p-6 border border-slate-200 text-center animate-fade-in-up delay-200">
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">12M</div>
+                    <div class="text-sm text-slate-600 font-medium">Patients Reached</div>
+                </div>
+                <div class="stat-card bg-white rounded-xl p-6 border border-slate-200 text-center animate-fade-in-up delay-300">
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">6</div>
+                    <div class="text-sm text-slate-600 font-medium">Month Timeline</div>
+                </div>
+                <div class="stat-card bg-white rounded-xl p-6 border border-slate-200 text-center animate-fade-in-up delay-400">
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">200+</div>
+                    <div class="text-sm text-slate-600 font-medium">Providers Engaged</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="py-16 px-4 md:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-12">
+                
+                <!-- Main Content -->
+                <div class="md:col-span-2 space-y-12">
+                    
+                    <!-- Overview -->
+                    <div class="animate-fade-in-up">
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Project Overview</h2>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            The GLP-1 therapeutics market represents one of the fastest-growing segments in healthcare, with significant implications for patient outcomes and provider practices. This project focused on developing and executing a comprehensive market expansion strategy to increase provider adoption of innovative GLP-1 treatments.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            Working closely with cross-functional teams, I led the market analysis efforts, identified key opportunity areas, and developed targeted engagement strategies that resulted in measurable adoption increases across our target territories.
+                        </p>
+                    </div>
+
+                    <!-- Challenge -->
+                    <div class="animate-fade-in-up delay-100">
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">The Challenge</h2>
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-4">
+                                    <div class="w-8 h-8 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-slate-900">Market Complexity</h4>
+                                        <p class="text-slate-600 text-sm">Rapidly evolving competitive landscape with multiple new entrants and shifting payer dynamics.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-8 h-8 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-slate-900">Provider Education Gap</h4>
+                                        <p class="text-slate-600 text-sm">Limited understanding among providers of optimal patient selection and treatment protocols.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-8 h-8 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-slate-900">Access Barriers</h4>
+                                        <p class="text-slate-600 text-sm">Complex prior authorization requirements and varying coverage across different payer types.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Approach -->
+                    <div class="animate-fade-in-up delay-200">
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Strategic Approach</h2>
+                        <div class="relative border-l-2 border-sky-200 pl-8 ml-4 space-y-8">
+                            <div class="timeline-item relative">
+                                <h4 class="font-semibold text-slate-900 mb-2">Market Intelligence Gathering</h4>
+                                <p class="text-slate-600 text-sm">Conducted comprehensive analysis of market dynamics, competitive positioning, and provider sentiment across target territories.</p>
+                            </div>
+                            <div class="timeline-item relative">
+                                <h4 class="font-semibold text-slate-900 mb-2">Segmentation & Targeting</h4>
+                                <p class="text-slate-600 text-sm">Developed provider segmentation model to identify high-potential prescribers and prioritize engagement efforts.</p>
+                            </div>
+                            <div class="timeline-item relative">
+                                <h4 class="font-semibold text-slate-900 mb-2">Education Program Development</h4>
+                                <p class="text-slate-600 text-sm">Created tailored clinical education materials and training programs addressing key knowledge gaps.</p>
+                            </div>
+                            <div class="timeline-item relative">
+                                <h4 class="font-semibold text-slate-900 mb-2">Go-to-Market Execution</h4>
+                                <p class="text-slate-600 text-sm">Launched multi-channel engagement campaign with coordinated sales, medical, and market access activities.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="animate-fade-in-up delay-300">
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Results & Impact</h2>
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="bg-gradient-to-br from-sky-50 to-cyan-50 rounded-xl p-6 border border-sky-100">
+                                <div class="w-12 h-12 bg-sky-600 rounded-xl flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-slate-900 mb-2">Provider Adoption</h4>
+                                <p class="text-slate-600 text-sm">Achieved 40% increase in provider adoption rates within 6 months of program launch.</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-cyan-50 to-sky-50 rounded-xl p-6 border border-cyan-100">
+                                <div class="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-slate-900 mb-2">Patient Reach</h4>
+                                <p class="text-slate-600 text-sm">Expanded access to 12 million patients through improved provider network coverage.</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-sky-50 to-cyan-50 rounded-xl p-6 border border-sky-100">
+                                <div class="w-12 h-12 bg-sky-600 rounded-xl flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-slate-900 mb-2">Education Impact</h4>
+                                <p class="text-slate-600 text-sm">95% of trained providers reported improved confidence in patient selection.</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-cyan-50 to-sky-50 rounded-xl p-6 border border-cyan-100">
+                                <div class="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-slate-900 mb-2">Speed to Market</h4>
+                                <p class="text-slate-600 text-sm">Delivered full program launch in 6 months, 2 months ahead of original timeline.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="space-y-8">
+                    
+                    <!-- Project Info -->
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 animate-fade-in-up delay-100">
+                        <h3 class="font-semibold text-slate-900 mb-4">Project Details</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <span class="text-xs text-slate-500 uppercase tracking-wider">Role</span>
+                                <p class="text-slate-900 font-medium">Project Lead</p>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 uppercase tracking-wider">Duration</span>
+                                <p class="text-slate-900 font-medium">6 Months</p>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 uppercase tracking-wider">Team Size</span>
+                                <p class="text-slate-900 font-medium">8 Members</p>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 uppercase tracking-wider">Company</span>
+                                <p class="text-slate-900 font-medium">Hillstone Pharmacy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Used -->
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 animate-fade-in-up delay-200">
+                        <h3 class="font-semibold text-slate-900 mb-4">Skills Applied</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm text-slate-700">Market Analysis</span>
+                            <span class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm text-slate-700">GTM Strategy</span>
+                            <span class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm text-slate-700">Provider Engagement</span>
+                            <span class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm text-slate-700">Clinical Education</span>
+                            <span class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm text-slate-700">Cross-functional Leadership</span>
+                            <span class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm text-slate-700">Data Analytics</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="bg-gradient-to-br from-sky-600 to-cyan-600 rounded-xl p-6 text-white animate-fade-in-up delay-300">
+                        <h3 class="font-semibold mb-2">Interested in similar results?</h3>
+                        <p class="text-sky-100 text-sm mb-4">Let's discuss how I can help drive growth for your organization.</p>
+                        <a href="index.html#contact" class="inline-flex items-center px-4 py-2 bg-white text-sky-600 rounded-lg font-semibold text-sm hover:bg-sky-50 transition-colors">
+                            Get in Touch
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Projects -->
+    <section class="py-20 px-4 md:px-8 bg-slate-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Related Projects</h2>
+                <p class="text-slate-600">Explore more of my healthcare strategy work</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Related Project 1 -->
+                <a href="blog/building-clinical-education.html" class="group block bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all">
+                    <div class="h-48 bg-gradient-to-br from-cyan-600 to-sky-600 overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=400" 
+                             alt="Clinical Education Platform" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">Clinical Education Platform</h3>
+                        <p class="text-sm text-slate-600">Built comprehensive education program training 500+ healthcare professionals.</p>
+                    </div>
+                </a>
+
+                <!-- Related Project 2 -->
+                <a href="blog/sales-team-structure.html" class="group block bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all">
+                    <div class="h-48 bg-gradient-to-br from-sky-600 to-cyan-600 overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=400" 
+                             alt="Sales Team Development" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">Sales Team Development</h3>
+                        <p class="text-sm text-slate-600">Coached and developed high-performing sales team achieving 150% quota.</p>
+                    </div>
+                </a>
+
+                <!-- Related Project 3 -->
+                <a href="blog/provider-adoption-pathways.html" class="group block bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all">
+                    <div class="h-48 bg-gradient-to-br from-cyan-600 to-sky-600 overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=400" 
+                             alt="Provider Adoption Program" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">Provider Adoption Program</h3>
+                        <p class="text-sm text-slate-600">Implemented innovative engagement strategy increasing adoption by 65%.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-4 md:px-8 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="text-2xl font-bold gradient-text">Chris Grosse</a>
+                    <p class="text-slate-400 mt-4 max-w-sm leading-relaxed">
+                        Healthcare strategy leader specializing in go-to-market execution, provider adoption, and clinical education.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigation</h4>
+                    <div class="flex flex-col gap-3">
+                        <a href="index.html" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Home</a>
+                        <a href="index.html#about" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">About</a>
+                        <a href="index.html#work" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Work</a>
+                        <a href="blog.html" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Blog</a>
+                        <a href="index.html#contact" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <div class="flex flex-col gap-3">
+                        <a href="mailto:cgrosse66@gmail.com" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Email</a>
+                        <a href="https://www.linkedin.com/in/sales-operations-development" target="_blank" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">LinkedIn</a>
+                        <a href="https://chris-newsletter-27fa7e.beehiiv.com/" target="_blank" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">Newsletter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8">
+                <p class="text-slate-500 text-sm">© 2026 Chris Grosse. All rights reserved.</p>
+                <p class="text-slate-500 text-sm">Designed & built with modern principles</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
