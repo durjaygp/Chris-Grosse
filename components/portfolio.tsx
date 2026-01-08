@@ -1,54 +1,101 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
+
 export default function Portfolio() {
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 },
+    )
+
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
+
   const work = [
     {
       title: "National Sales Infrastructure",
       company: "Hillstone Pharmacy",
-      impact: "Built GTM operating system across 30+ licensed states",
+      impact: "30+ licensed states",
+      metrics: "Built GTM operating system from scratch",
       details:
-        "Designed sales organization from scratch, including talent strategy, training frameworks, KPI dashboards, and provider activation pathways that accelerated adoption across peptides, GLP-1s, and BHRT.",
+        "Designed sales organization including talent strategy, training frameworks, KPI dashboards, and provider activation pathways that accelerated adoption across peptides, GLP-1s, and BHRT.",
     },
     {
       title: "Multi-State Provider Networks",
-      company: "Johnson Compounding & Related Entities",
-      impact: "$7.8M cumulative net prescription lift",
+      company: "Johnson Compounding",
+      impact: "$7.8M net prescription lift",
+      metrics: "2,500+ clinicians across 25 markets",
       details:
-        "Expanded provider networks to 2,500+ clinicians across 25 licensed markets. Developed clinical education programs and workflow integration strategies that improved provider understanding of compounding safety standards.",
+        "Expanded provider networks and developed clinical education programs and workflow integration strategies that improved provider understanding of compounding safety standards.",
     },
     {
       title: "Therapeutic Category Expansion",
-      company: "Multiple Compounding Organizations",
-      impact: "20-30% YoY growth across verticals",
+      company: "Multiple Organizations",
+      impact: "20-30% YoY growth",
+      metrics: "$600K revenue in first two quarters",
       details:
-        "Launched new therapeutic categories (GLP-1s, peptides, BHRT, metabolic health). Built provider education frameworks and direct-to-patient telemedicine programs generating $600K in first two quarters.",
+        "Launched new therapeutic categories (GLP-1s, peptides, BHRT, metabolic health) with provider education frameworks and direct-to-patient telemedicine programs.",
     },
     {
       title: "Commercial Leadership",
       company: "Ruby Wines",
-      impact: "68% sales increase ($1.6M → $2.7M)",
+      impact: "68% sales increase",
+      metrics: "$1.6M → $2.7M revenue",
       details:
-        "Managed 145-account territory for global wine & spirits portfolio. Won Sales Leader of the Year (2016), delivered consistent 20%+ YoY growth, and established best practices for account management and team training.",
+        "Managed 145-account territory with 20%+ YoY growth. Won Sales Leader of the Year (2016) and established best practices for account management.",
     },
   ]
 
   return (
-    <section id="portfolio" className="py-20 md:py-32 px-6 md:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-charcoal mb-4">Selected Work</h2>
-        <p className="text-muted-gray mb-12 md:mb-16 max-w-2xl">
-          Highlights of projects where I've built systems, expanded access, and led teams to deliver measurable impact.
-        </p>
+    <section id="portfolio" className="py-20 md:py-32 px-6 md:px-8 bg-white relative overflow-hidden" ref={ref}>
+      <div
+        className="absolute bottom-40 right-20 w-80 h-80 bg-sky-100/10 rounded-full blur-3xl -z-10 float-animation"
+        style={{ animationDelay: "3s" }}
+      />
 
-        <div className="space-y-12 md:space-y-16">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className={`mb-12 md:mb-16 ${isVisible ? "fade-in" : "opacity-0"}`}>
+          <h2 className="text-slate-900">Selected Work</h2>
+          <p className="text-lg text-slate-600 mt-4 max-w-2xl">
+            Projects where I've built systems, expanded access, and led teams to deliver measurable impact.
+          </p>
+        </div>
+
+        <div className="space-y-8 md:space-y-12">
           {work.map((item, idx) => (
-            <div key={idx} className="pb-12 md:pb-16 border-b border-light-gray last:border-b-0">
-              <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            <div
+              key={idx}
+              className={`group p-8 md:p-10 bg-gradient-to-br from-slate-50/50 to-white rounded-xl border border-slate-200 hover:border-sky-300 hover:shadow-2xl hover-lift relative overflow-hidden ${
+                isVisible ? "fade-in-up" : "opacity-0"
+              }`}
+              style={{ animationDelay: `${idx * 0.15}s` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-50/0 to-cyan-50/0 group-hover:from-sky-50/50 group-hover:to-cyan-50/50 transition-all duration-300 -z-10" />
+
+              <div className="grid md:grid-cols-4 gap-6 md:gap-8 relative z-10">
                 <div>
-                  <h3 className="text-charcoal font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-gray">{item.company}</p>
+                  <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm font-medium text-sky-600 group-hover:text-sky-700 transition-colors">
+                    {item.company}
+                  </p>
                 </div>
                 <div>
-                  <p className="text-soft-teal font-medium mb-2">{item.impact}</p>
-                  <p className="text-muted-gray leading-relaxed">{item.details}</p>
+                  <p className="text-2xl font-bold gradient-text mb-1">{item.impact}</p>
+                  <p className="text-sm text-slate-600">{item.metrics}</p>
+                </div>
+                <div className="md:col-span-2">
+                  <p className="text-slate-600 leading-relaxed">{item.details}</p>
                 </div>
               </div>
             </div>

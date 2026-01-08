@@ -4,6 +4,8 @@ import About from "@/components/about"
 import Expertise from "@/components/expertise"
 import Portfolio from "@/components/portfolio"
 import CTA from "@/components/cta"
+import FeaturedVideo from "@/components/featured-video"
+import Certificates from "@/components/certificates"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 
@@ -15,6 +17,8 @@ export default function Home() {
       <About />
       <Expertise />
       <Portfolio />
+      <FeaturedVideo />
+      <Certificates />
       <CTA />
       <Contact />
       <Footer />
